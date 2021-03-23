@@ -69,15 +69,19 @@ func (s *Searcher) Load(filename string) error {
 		return fmt.Errorf("Load: %w", err)
 	}
 	s.CompleteWorks = string(dat)
+
+	// Converting all the characters to lower case to support Case insensitive searching.
 	s.SuffixArray = suffixarray.New(bytes.ToLower(dat))
 	return nil
 }
 
 func (s *Searcher) Search(query string) []string {
-	// fmt.Printf("%v", s.SuffixArray)
+	// Converting the query to lower case before performing the searching.
 	idxs := s.SuffixArray.Lookup([]byte(strings.ToLower(query)), -1)
 	results := []string{}
+	fmt.Printf("%v",idxs)
 	for _, idx := range idxs {
+		// fmt.Printf("%v", val)
 		results = append(results, s.CompleteWorks[idx-1:idx+1])
 	}
 	return results

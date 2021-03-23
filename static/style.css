@@ -239,11 +239,35 @@ textarea {
      * Printing Tables:
      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
      */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
   thead {
     display: table-header-group;
   }
 
-  tr,
+  th {
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+  }
+
+  tr{
+    page-break-inside: avoid;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2;}
+  tr:hover {background-color: #ddd;}
+
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
   img {
     page-break-inside: avoid;
   }
