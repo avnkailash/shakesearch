@@ -5,18 +5,21 @@ const Controller = {
     const data = Object.fromEntries(new FormData(form));
     const response = fetch(`/search?q=${data.query}`).then((response) => {
       response.json().then((results) => {
-        Controller.updateTable(results);
+        Controller.updateTable(results, data.query);
       });
     });
   },
 
-  updateTable: (results) => {
+  updateTable: (results, searchString) => {
     const table = document.getElementById("styled-table-body");
     const rows = [];
     let sno = 1
+
     for (let result of results) {
       console.log("Result = ", result);
-      rows.push(`<tr><td>${sno}</td><td>${result}</td></tr>`);
+      var re = new RegExp(searchString, 'ig');
+      var matchResults = result.match(re);
+      rows.push(`<tr><td>${sno}</td><td>${result}</td><td>${matchResults}</td></tr>`);
       sno += 1;
     }
     console.log("Full Rows = ", rows);
