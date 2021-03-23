@@ -11,8 +11,9 @@ const Controller = {
   },
 
   updateTable: (results) => {
-    const table = document.getElementById("search-results-body");
+    const table = document.getElementById("search-results");
     const rows = [];
+    rows.push('<tr><th>S.No</th><th>Search Results</th></tr>');
     let sno = 1
     for (let result of results) {
       console.log("Result = ", result);

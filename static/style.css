@@ -244,9 +244,9 @@ textarea {
     border-collapse: collapse;
   }
 
-  #thead {
+  /* #thead {
     display: table-header-group;
-  }
+  } */
 
   #search-results th {
     text-align: left;
@@ -256,14 +256,14 @@ textarea {
     padding: 8px 12px;
   }
 
-  tr{
+  #search-results tr{
     page-break-inside: avoid;
   }
 
-  tr:nth-child(even){background-color: #f2f2f2;}
-  tr:hover {background-color: #ddd;}
+  #search-results tr:nth-child(even){background-color: #f2f2f2;}
+  #search-results tr:hover {background-color: #ddd;}
 
-  td {
+  #search-results td {
     border: 1px solid #ddd;
     padding: 8px;
   }
