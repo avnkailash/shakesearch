@@ -11,7 +11,7 @@ const Controller = {
   },
 
   updateTable: (results) => {
-    const table = document.getElementById("search-results");
+    const table = document.getElementById("styled-table-body");
     const rows = [];
     rows.push('<tr><th>S.No</th><th>Search Results</th></tr>');
     let sno = 1
