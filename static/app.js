@@ -16,13 +16,12 @@ const Controller = {
     let sno = 1
 
     for (let result of results) {
-      console.log("Result = ", result);
       var re = new RegExp(searchString, 'ig');
       var matchResults = result.match(re);
+      console.log(matchResults);
       rows.push(`<tr><td>${sno}</td><td>${result}</td><td>${matchResults}</td></tr>`);
       sno += 1;
     }
-    console.log("Full Rows = ", rows);
     table.innerHTML = rows.join(" ");
   },
 };
