@@ -1,3 +1,4 @@
 module pulley.com/shakesearch
 
-go 1.15
+// +heroku goVersion go1.1
+go 1.16
