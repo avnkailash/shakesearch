@@ -18,8 +18,8 @@ const Controller = {
     for (let result of results) {
       var re = new RegExp(searchString, 'ig');
       var matchResults = [...new Set(result.match(re))];
-      console.log(matchResults);
-      for (let match in matchResults){
+      // console.log(matchResults);
+      for (let match of matchResults){
         result = result.replace(match, "<mark>"+match+"</mark>");
         // console.log("<mark>"+match+"</mark>");
       }
