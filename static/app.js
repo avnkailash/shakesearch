@@ -11,7 +11,7 @@ const Controller = {
   },
 
   updateTable: (results) => {
-    const table = document.getElementById("table-body");
+    const table = document.getElementById("search-results-body");
     const rows = [];
     let sno = 1
     for (let result of results) {
