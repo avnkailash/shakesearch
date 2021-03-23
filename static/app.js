@@ -20,7 +20,7 @@ const Controller = {
       sno += 1;
     }
     console.log("Full Rows = ", rows);
-    table.innerHTML = rows;
+    table.innerHTML = rows.join(" ");
   },
 };
 
