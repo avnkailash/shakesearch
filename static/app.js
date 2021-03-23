@@ -13,9 +13,13 @@ const Controller = {
   updateTable: (results) => {
     const table = document.getElementById("table-body");
     const rows = [];
+    let sno = 1
     for (let result of results) {
-      rows.push(`<tr>${result}<tr/>`);
+      console.log("Result = ", result);
+      rows.push(`<tr><td>${sno}</td><td>${result}</td></tr>`);
+      sno += 1;
     }
+    console.log("Full Rows = ", rows);
     table.innerHTML = rows;
   },
 };
