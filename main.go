@@ -79,10 +79,9 @@ func (s *Searcher) Search(query string) []string {
 	// Converting the query to lower case before performing the searching.
 	idxs := s.SuffixArray.Lookup([]byte(strings.ToLower(query)), -1)
 	results := []string{}
-	fmt.Printf("%v",idxs)
 	for _, idx := range idxs {
 		// fmt.Printf("%v", val)
-		results = append(results, s.CompleteWorks[idx-1:idx+1])
+		results = append(results, s.CompleteWorks[idx-250:idx+250])
 	}
 	return results
 }
